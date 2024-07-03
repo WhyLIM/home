@@ -29,6 +29,14 @@
                     <img src="/images/icon/备案图标.png" style="width: 18px;vertical-align: middle">
                     {{ siteMps }}
                 </a>
+                <!-- 开往 -->
+                <a v-if="siteKw" href="https://www.travellings.cn/go.html" target="_blank">
+                    |
+                    <Icon size="24" style="vertical-align: middle">
+                        <component :is="siteIcon.MdTrain" />
+                    </Icon>
+                    {{ siteKw }}
+                </a>
             </div>
             <div v-else class="lrc">
                 <Transition name="fade" mode="out-in">
@@ -47,14 +55,18 @@
 import { MusicOne } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
 import config from "@/../package.json";
+import { Icon } from '@vicons/utils';
+import { MdTrain } from "@vicons/ionicons4";
 
 const store = mainStore();
 const fullYear = new Date().getFullYear();
+const siteIcon = { MdTrain };
 
 // 加载配置数据
 const siteStartDate = ref(import.meta.env.VITE_SITE_START);
 const siteIcp = ref(import.meta.env.VITE_SITE_ICP);
 const siteMps = ref(import.meta.env.VITE_SITE_MPS);
+const siteKw = ref(import.meta.env.VITE_SITE_KW);
 const siteAnthor = ref(import.meta.env.VITE_SITE_ANTHOR);
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
