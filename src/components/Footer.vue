@@ -26,6 +26,7 @@
                 <a v-if="siteMps" href="https://beian.mps.gov.cn/#/query/webSearch?code=32062302000380" rel="noreferrer"
                     target="_blank">
                     |
+                    <img src="/images/icon/备案图标.png" style="width: 18px;vertical-align: middle">
                     {{ siteMps }}
                 </a>
             </div>
