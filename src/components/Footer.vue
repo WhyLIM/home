@@ -18,6 +18,12 @@
                         {{ config.author }}
                     </a>
                 </span>
+                <!-- 又拍云提供 CDN 服务 -->
+                <a v-if="siteYun" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
+                    |
+                    <img src="/images/icon/upyun.png" style="height: 40px;vertical-align: middle">
+                    {{ siteYun }}
+                </a>
                 <!-- 站点备案 -->
                 <a v-if="siteIcp" href="https://beian.miit.gov.cn" target="_blank">
                     |
@@ -64,6 +70,7 @@ const siteIcon = { MdTrain };
 
 // 加载配置数据
 const siteStartDate = ref(import.meta.env.VITE_SITE_START);
+const siteYun = ref(import.meta.env.VITE_SITE_YUN);
 const siteIcp = ref(import.meta.env.VITE_SITE_ICP);
 const siteMps = ref(import.meta.env.VITE_SITE_MPS);
 const siteKw = ref(import.meta.env.VITE_SITE_KW);
